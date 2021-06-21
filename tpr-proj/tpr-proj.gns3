@@ -144,15 +144,6 @@
                 "z": 2
             },
             {
-                "drawing_id": "d1bd3ded-c849-4718-b395-d1633db9a222",
-                "locked": false,
-                "rotation": 0,
-                "svg": "<svg width=\"551\" height=\"440\"><rect width=\"551\" height=\"440\" fill=\"#ffffff\" fill-opacity=\"1.0\" stroke-width=\"2\" stroke=\"#000000\" /></svg>",
-                "x": -496,
-                "y": -214,
-                "z": 0
-            },
-            {
                 "drawing_id": "38556a09-676f-47db-b8e1-06f00d19a8d7",
                 "locked": false,
                 "rotation": 0,
@@ -169,6 +160,15 @@
                 "x": 61,
                 "y": -190,
                 "z": 2
+            },
+            {
+                "drawing_id": "2da73df6-4c53-4563-97c2-9e6138266cb5",
+                "locked": false,
+                "rotation": 0,
+                "svg": "<svg width=\"574\" height=\"440\"><rect width=\"574\" height=\"440\" fill=\"#ffffff\" fill-opacity=\"1.0\" stroke-width=\"2\" stroke=\"#000000\" /></svg>",
+                "x": -515,
+                "y": -216,
+                "z": 0
             }
         ],
         "links": [
@@ -270,38 +270,6 @@
             },
             {
                 "filters": {},
-                "link_id": "97e0f0a0-a108-41f0-b601-c7991c498c2a",
-                "link_style": {},
-                "nodes": [
-                    {
-                        "adapter_number": 0,
-                        "label": {
-                            "rotation": 0,
-                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
-                            "text": "e0",
-                            "x": 55,
-                            "y": -3
-                        },
-                        "node_id": "d4caa7d2-d1c7-4f22-a982-3a0fc35f850a",
-                        "port_number": 0
-                    },
-                    {
-                        "adapter_number": 0,
-                        "label": {
-                            "rotation": 0,
-                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
-                            "text": "e1",
-                            "x": 12,
-                            "y": 48
-                        },
-                        "node_id": "cb167dab-4b9c-492f-b715-436aff278577",
-                        "port_number": 1
-                    }
-                ],
-                "suspend": false
-            },
-            {
-                "filters": {},
                 "link_id": "12d45991-b433-459c-93c5-2d9861430175",
                 "link_style": {},
                 "nodes": [
@@ -328,38 +296,6 @@
                         },
                         "node_id": "cb167dab-4b9c-492f-b715-436aff278577",
                         "port_number": 2
-                    }
-                ],
-                "suspend": false
-            },
-            {
-                "filters": {},
-                "link_id": "232c6aa5-2ec3-4f36-aefd-ea22f4535185",
-                "link_style": {},
-                "nodes": [
-                    {
-                        "adapter_number": 0,
-                        "label": {
-                            "rotation": 0,
-                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
-                            "text": "e0",
-                            "x": -1,
-                            "y": 8
-                        },
-                        "node_id": "3d6d7539-08ff-46cd-902e-1dc377138538",
-                        "port_number": 0
-                    },
-                    {
-                        "adapter_number": 0,
-                        "label": {
-                            "rotation": 0,
-                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
-                            "text": "e1",
-                            "x": 69,
-                            "y": 37
-                        },
-                        "node_id": "fa4e018f-465e-46a5-9522-d2501b3dc953",
-                        "port_number": 1
                     }
                 ],
                 "suspend": false
@@ -423,6 +359,70 @@
                             "y": 22
                         },
                         "node_id": "3d3a8715-8311-49ca-8ced-3a8100b95dd6",
+                        "port_number": 1
+                    }
+                ],
+                "suspend": false
+            },
+            {
+                "filters": {},
+                "link_id": "f6bf4dc1-94de-4d37-acd7-f8dd7d9e50e0",
+                "link_style": {},
+                "nodes": [
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "rotation": 0,
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "text": "e0",
+                            "x": 12,
+                            "y": -5
+                        },
+                        "node_id": "0590b371-6e55-4986-918c-d065e1d1d86e",
+                        "port_number": 0
+                    },
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "rotation": 0,
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "text": "e1",
+                            "x": 55,
+                            "y": 50
+                        },
+                        "node_id": "fa4e018f-465e-46a5-9522-d2501b3dc953",
+                        "port_number": 1
+                    }
+                ],
+                "suspend": false
+            },
+            {
+                "filters": {},
+                "link_id": "9c7696b2-4fe7-4d7e-81c8-a2a0144fdc9d",
+                "link_style": {},
+                "nodes": [
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "rotation": 0,
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "text": "e0",
+                            "x": 55,
+                            "y": -3
+                        },
+                        "node_id": "b5c7048d-a46e-4836-8099-8214024e19cb",
+                        "port_number": 0
+                    },
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "rotation": 0,
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "text": "e1",
+                            "x": 12,
+                            "y": 49
+                        },
+                        "node_id": "cb167dab-4b9c-492f-b715-436aff278577",
                         "port_number": 1
                     }
                 ],
@@ -741,8 +741,8 @@
                 "symbol": ":/symbols/vpcs_guest.svg",
                 "template_id": "19021f99-e36f-394d-b4a1-8aaa902ab9cc",
                 "width": 65,
-                "x": -479,
-                "y": 125,
+                "x": -488,
+                "y": 269,
                 "z": 1
             },
             {
@@ -799,8 +799,8 @@
                 "symbol": ":/symbols/vpcs_guest.svg",
                 "template_id": "19021f99-e36f-394d-b4a1-8aaa902ab9cc",
                 "width": 65,
-                "x": -121,
-                "y": 133,
+                "x": -112,
+                "y": 271,
                 "z": 1
             },
             {
@@ -843,7 +843,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5010,
+                "console": 5011,
                 "console_auto_start": false,
                 "console_type": "telnet",
                 "custom_adapters": [],
@@ -908,6 +908,142 @@
                 "width": 66,
                 "x": 373,
                 "y": -116,
+                "z": 1
+            },
+            {
+                "compute_id": "local",
+                "console": null,
+                "console_auto_start": false,
+                "console_type": "none",
+                "custom_adapters": [],
+                "first_port_name": "",
+                "height": 59,
+                "label": {
+                    "rotation": 0,
+                    "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                    "text": "labcom_webserver-1",
+                    "x": -46,
+                    "y": -25
+                },
+                "locked": false,
+                "name": "labcom_webserver-1",
+                "node_id": "0590b371-6e55-4986-918c-d065e1d1d86e",
+                "node_type": "qemu",
+                "port_name_format": "Ethernet{0}",
+                "port_segment_size": 0,
+                "properties": {
+                    "adapter_type": "e1000",
+                    "adapters": 1,
+                    "bios_image": "",
+                    "bios_image_md5sum": null,
+                    "boot_priority": "c",
+                    "cdrom_image": "",
+                    "cdrom_image_md5sum": null,
+                    "cpu_throttling": 0,
+                    "cpus": 1,
+                    "create_config_disk": false,
+                    "hda_disk_image": "/home/bruno/vms/webserver.qcow2",
+                    "hda_disk_image_md5sum": "8c706c87904365d2b1440f9ea05e8fdb",
+                    "hda_disk_interface": "ide",
+                    "hdb_disk_image": "",
+                    "hdb_disk_image_md5sum": null,
+                    "hdb_disk_interface": "none",
+                    "hdc_disk_image": "",
+                    "hdc_disk_image_md5sum": null,
+                    "hdc_disk_interface": "none",
+                    "hdd_disk_image": "",
+                    "hdd_disk_image_md5sum": null,
+                    "hdd_disk_interface": "none",
+                    "initrd": "",
+                    "initrd_md5sum": null,
+                    "kernel_command_line": "",
+                    "kernel_image": "",
+                    "kernel_image_md5sum": null,
+                    "legacy_networking": false,
+                    "linked_clone": true,
+                    "mac_address": "0c:f9:8f:d8:6e:00",
+                    "on_close": "power_off",
+                    "options": "",
+                    "platform": "x86_64",
+                    "process_priority": "normal",
+                    "qemu_path": "/bin/qemu-system-x86_64",
+                    "ram": 1024,
+                    "replicate_network_connection_state": true,
+                    "usage": ""
+                },
+                "symbol": ":/symbols/qemu_guest.svg",
+                "template_id": "2e5aeab7-dd34-4813-9bd3-1c0b77307d86",
+                "width": 65,
+                "x": -116,
+                "y": 130,
+                "z": 1
+            },
+            {
+                "compute_id": "local",
+                "console": null,
+                "console_auto_start": false,
+                "console_type": "none",
+                "custom_adapters": [],
+                "first_port_name": "",
+                "height": 59,
+                "label": {
+                    "rotation": 0,
+                    "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                    "text": "labcom_host-1",
+                    "x": -24,
+                    "y": -25
+                },
+                "locked": false,
+                "name": "labcom_host-1",
+                "node_id": "b5c7048d-a46e-4836-8099-8214024e19cb",
+                "node_type": "qemu",
+                "port_name_format": "Ethernet{0}",
+                "port_segment_size": 0,
+                "properties": {
+                    "adapter_type": "e1000",
+                    "adapters": 1,
+                    "bios_image": "",
+                    "bios_image_md5sum": null,
+                    "boot_priority": "c",
+                    "cdrom_image": "",
+                    "cdrom_image_md5sum": null,
+                    "cpu_throttling": 0,
+                    "cpus": 1,
+                    "create_config_disk": false,
+                    "hda_disk_image": "/home/bruno/vms/LabComServer2.qcow2",
+                    "hda_disk_image_md5sum": "dc012cde1338185c8b735db100210a7f",
+                    "hda_disk_interface": "ide",
+                    "hdb_disk_image": "",
+                    "hdb_disk_image_md5sum": null,
+                    "hdb_disk_interface": "none",
+                    "hdc_disk_image": "",
+                    "hdc_disk_image_md5sum": null,
+                    "hdc_disk_interface": "none",
+                    "hdd_disk_image": "",
+                    "hdd_disk_image_md5sum": null,
+                    "hdd_disk_interface": "none",
+                    "initrd": "",
+                    "initrd_md5sum": null,
+                    "kernel_command_line": "",
+                    "kernel_image": "",
+                    "kernel_image_md5sum": null,
+                    "legacy_networking": false,
+                    "linked_clone": true,
+                    "mac_address": "0c:f9:8f:19:cb:00",
+                    "on_close": "power_off",
+                    "options": "",
+                    "platform": "x86_64",
+                    "process_priority": "normal",
+                    "qemu_path": "/bin/qemu-system-x86_64",
+                    "ram": 256,
+                    "replicate_network_connection_state": true,
+                    "usage": ""
+                },
+                "symbol": ":/symbols/qemu_guest.svg",
+                "template_id": "df92bb8d-1caa-4c2a-97c6-f1c62e199cab",
+                "width": 65,
+                "x": -477,
+                "y": 125,
                 "z": 1
             }
         ]

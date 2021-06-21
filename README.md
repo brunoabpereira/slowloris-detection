@@ -15,7 +15,7 @@ Packet captures for two scenarios: attack and normal.
 
 ## attack
 
-1 machine attacking 2 hosts for 30 mins. The attack performed is [slowloris](https://github.com/gkbrk/slowloris):
+1 machine attacking 2 hosts for 15 mins. The attack performed is [slowloris](https://github.com/gkbrk/slowloris):
 
 ```
 python3 slowloris.py host -v -s x --sleeptime y
@@ -28,7 +28,7 @@ python3 slowloris.py host -v -s x --sleeptime y
 - random intervals between attacks = 30-90 seconds
 
 ## normal
-1 machine browsing for 30 mins:
+1 machine browsing for 15 mins:
 
 - Youtube
 - Reddit

@@ -6,13 +6,12 @@
 Timeout 300
 KeepAlive On
 MaxKeepAliveRequests 100
-KeepAliveTimeout 15 # default Apache 2.0 
+KeepAliveTimeout 15         # default Apache 2.0
 ```
 
 # datasets
 
-- Packets captures
-- NetFlow
+Packet captures for two scenarios: attack and normal.
 
 ## attack
 
@@ -37,3 +36,5 @@ python3 slowloris.py host -v -s x --sleeptime y
 - Google images
 - tmp.tpr.local
 - tmp2.tpr.local
+
+# feature extraction

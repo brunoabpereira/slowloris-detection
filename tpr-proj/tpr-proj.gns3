@@ -139,8 +139,8 @@
                 "locked": false,
                 "rotation": 0,
                 "svg": "<svg width=\"90\" height=\"25\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">10.1.1.2/30</text></svg>",
-                "x": 272,
-                "y": -123,
+                "x": 287,
+                "y": -124,
                 "z": 2
             },
             {
@@ -148,8 +148,8 @@
                 "locked": false,
                 "rotation": 0,
                 "svg": "<svg width=\"42\" height=\"25\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">NAT </text></svg>",
-                "x": 382,
-                "y": -183,
+                "x": 404,
+                "y": -174,
                 "z": 2
             },
             {
@@ -463,38 +463,6 @@
                     }
                 ],
                 "suspend": false
-            },
-            {
-                "filters": {},
-                "link_id": "60548903-1f75-47ed-af60-e7cc149b3d38",
-                "link_style": {},
-                "nodes": [
-                    {
-                        "adapter_number": 0,
-                        "label": {
-                            "rotation": 0,
-                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
-                            "text": "tap0",
-                            "x": 63,
-                            "y": -1
-                        },
-                        "node_id": "f77ca69c-5908-45ff-960b-ca8ff3fa21d4",
-                        "port_number": 1
-                    },
-                    {
-                        "adapter_number": 0,
-                        "label": {
-                            "rotation": 0,
-                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
-                            "text": "e2",
-                            "x": 51,
-                            "y": 52
-                        },
-                        "node_id": "cb167dab-4b9c-492f-b715-436aff278577",
-                        "port_number": 2
-                    }
-                ],
-                "suspend": false
             }
         ],
         "nodes": [
@@ -528,7 +496,7 @@
                     "dynamips_id": 1,
                     "exec_area": 64,
                     "idlemax": 500,
-                    "idlepc": "0x60608040",
+                    "idlepc": "0x60609bc4",
                     "idlesleep": 30,
                     "image": "c7200-adventerprisek9-mz.151-4.M2.image",
                     "image_md5sum": "d54b063e3d0b368a702ffb49f497825e",
@@ -597,7 +565,7 @@
                     "dynamips_id": 2,
                     "exec_area": 64,
                     "idlemax": 500,
-                    "idlepc": "0x60a6a1e0",
+                    "idlepc": "0x60a68ca0",
                     "idlesleep": 30,
                     "image": "c3725-advipservicesk9-mz.124-21.image",
                     "image_md5sum": "c336fa915d7ecd3b821c5e562c4326ab",
@@ -620,7 +588,7 @@
                 "symbol": ":/symbols/multilayer_switch.svg",
                 "template_id": "c3853e46-4e46-461a-8fc3-6df9df86db4d",
                 "width": 51,
-                "x": -247,
+                "x": -248,
                 "y": -120,
                 "z": 1
             },
@@ -939,7 +907,7 @@
                     "dynamips_id": 3,
                     "exec_area": 64,
                     "idlemax": 500,
-                    "idlepc": "0x60608040",
+                    "idlepc": "0x60609bc4",
                     "idlesleep": 30,
                     "image": "c7200-adventerprisek9-mz.151-4.M2.image",
                     "image_md5sum": "d54b063e3d0b368a702ffb49f497825e",
@@ -974,15 +942,15 @@
                 "symbol": ":/symbols/router.svg",
                 "template_id": "13515e45-a8b3-4ba3-bad6-fa23c4d1951a",
                 "width": 66,
-                "x": 371,
-                "y": -116,
+                "x": 393,
+                "y": -118,
                 "z": 1
             },
             {
                 "compute_id": "local",
-                "console": null,
+                "console": 5018,
                 "console_auto_start": false,
-                "console_type": "none",
+                "console_type": "telnet",
                 "custom_adapters": [],
                 "first_port_name": "",
                 "height": 59,
@@ -1035,7 +1003,7 @@
                     "platform": "x86_64",
                     "process_priority": "normal",
                     "qemu_path": "/bin/qemu-system-x86_64",
-                    "ram": 1024,
+                    "ram": 512,
                     "replicate_network_connection_state": true,
                     "usage": ""
                 },
@@ -1076,7 +1044,7 @@
                     "cdrom_image": "",
                     "cdrom_image_md5sum": null,
                     "cpu_throttling": 0,
-                    "cpus": 1,
+                    "cpus": 4,
                     "create_config_disk": false,
                     "hda_disk_image": "/home/bruno/vms/LabComServer2.qcow2",
                     "hda_disk_image_md5sum": "dc012cde1338185c8b735db100210a7f",
@@ -1103,7 +1071,7 @@
                     "platform": "x86_64",
                     "process_priority": "normal",
                     "qemu_path": "/bin/qemu-system-x86_64",
-                    "ram": 256,
+                    "ram": 4096,
                     "replicate_network_connection_state": true,
                     "usage": ""
                 },
@@ -1145,9 +1113,9 @@
             },
             {
                 "compute_id": "local",
-                "console": null,
+                "console": 5019,
                 "console_auto_start": false,
-                "console_type": "none",
+                "console_type": "telnet",
                 "custom_adapters": [],
                 "first_port_name": "",
                 "height": 59,
@@ -1215,7 +1183,7 @@
                 "compute_id": "local",
                 "console": null,
                 "console_auto_start": false,
-                "console_type": null,
+                "console_type": "none",
                 "custom_adapters": [],
                 "first_port_name": null,
                 "height": 71,
@@ -1299,7 +1267,7 @@
                 "template_id": "39e257dc-8412-3174-b6b3-0ee3ed6a43e9",
                 "width": 159,
                 "x": -386,
-                "y": 121,
+                "y": 123,
                 "z": 1
             }
         ]

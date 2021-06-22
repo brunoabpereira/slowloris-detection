@@ -39,9 +39,9 @@ while total_duration < max_duration:
     )
     print('attack end')
 
-    wait_next_attack = random.randrange(attack_interval_range[0], attack_interval_range[1])
-    print('sleep for {} secs'.format(wait_next_attack))
-    time.sleep(wait_next_attack)
+    # wait_next_attack = random.randrange(attack_interval_range[0], attack_interval_range[1])
+    # print('sleep for {} secs'.format(wait_next_attack))
+    # time.sleep(wait_next_attack)
 
     end = time.time()
 

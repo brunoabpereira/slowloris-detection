@@ -18,7 +18,7 @@ Packet captures for two scenarios: attack and normal.
 1 machine attacking 2 hosts for 15 mins. The attack performed is [slowloris](https://github.com/gkbrk/slowloris):
 
 ```
-python3 slowloris.py host -v -s x --sleeptime y
+python3 slowloris.py host -ua -s x --sleeptime y
 ```
 
 - host = random host (tmp.tpr.local or tmp2.tpr.local)
@@ -33,8 +33,25 @@ python3 slowloris.py host -v -s x --sleeptime y
 - Youtube
 - Reddit
 - Facebook
+- Wikipedia
 - Google images
 - tmp.tpr.local
 - tmp2.tpr.local
 
 # feature extraction
+
+filter by:
+- tcp packets
+- egressing packets
+- source ip
+
+for each source ip (host):
+- get observation windows (sequential or sliding?)
+
+for each observation window:
+- Number of TCP packets
+- Number of TCP packet *segments*
+- Mean TCP packet length
+- Variance TCP packet length
+- shannon entropy of TCP destination IP
+- shannon entropy of TCP destination port

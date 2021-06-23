@@ -36,8 +36,11 @@ files = [f for f in os.listdir('.') if re.match(r"dataset_[0-9]+.[0-9].[0-9].[0-
 for f in files:
     host = re.findall(r'[0-9]+.[0-9]+.[0-9]+.[0-9]+',f)[0]
     print('host:\t{}'.format(host))
-    res = predict(f, host)
+    res = []
+    try:
+        res = predict(f, host)
+    except Exception:
+        pass
     print('class:\t{}'.format('attack' if res else 'normal'))
     print('ids of detected observation windows:')
     print(res)
-    break

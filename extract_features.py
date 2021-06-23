@@ -113,11 +113,10 @@ for host in all_hosts:
     ###
 
     df = pd.DataFrame(
-        data=data[:,1:],
-        index=data[:,0],
-        columns=["pkt_num", "syn_num", "mu_len", "std_len", "ip_ent", "port_ent", "silence_ratio", "mu_silence", "std_silence"], 
+        data=data,
+        columns=["obs_id", "pkt_num", "syn_num", "mu_len", "std_len", "ip_ent", "port_ent", "silence_ratio", "mu_silence", "std_silence"], 
     )
 
     print(df.describe())
 
-    df.to_csv('dataset_{}.csv'.format(host))
+    df.to_csv('dataset_{}.csv'.format(host), index=False)

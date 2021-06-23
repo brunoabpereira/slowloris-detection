@@ -48,11 +48,12 @@ for each source ip (host):
 - get observation windows (sequential or sliding)
 
 for each observation window:
-- number of TCP packets (all or SYN?)
+- number of TCP packets
+- number of TCP SYN packets
 - mean TCP packet length
 - std TCP packet length
-- shannon entropy of TCP destination IP
-- shannon entropy of TCP destination port
+- normalized shannon entropy of TCP destination IP
+- normalized shannon entropy of TCP destination port
 - total silence
 - average of silence
 - std of silence

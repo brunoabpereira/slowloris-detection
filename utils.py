@@ -20,10 +20,7 @@ def pkt_samples(packets, sample_interval=1, flag=None):
         sample = []
         while packet_idx < num_packets and packets[packet_idx].time < int(interval_start + sample_interval):
             pkt = packets[packet_idx]
-            if flag and pkt[TCP].flags.value == flag:
-                sample.append(pkt)
-            else:
-                sample.append(pkt)
+            sample.append(pkt)
             packet_idx +=1
         packet_samples.append(sample)
             

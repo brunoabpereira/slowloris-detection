@@ -11,7 +11,7 @@ import pandas as pd
 ###
 
 # file with raw packets
-pcapfile = 'dataset/raw/attack_capture.pcap'
+pcapfile = 'dataset/raw/normal_capture.pcap'
 # filter packets egressing from network
 network = '10.0.0.64/26'
 
@@ -62,13 +62,18 @@ for host in all_hosts:
     windows = obs_windows[host]
 
     m = len(windows) # examples
-    n = 1 + 8        # id + features
+    n = 1 + 9        # id + features
     data = np.zeros((m,n))
 
     for obs_id, obs_window in enumerate(windows):
         # number of TCP packets
         num_tcp_packets = num_tcp_pkts(obs_window)
-        
+
+        # number of TCP SYN packets
+        SYN = 0x02
+        syn_obs_window = [list(filter(lambda pkt: bool(pkt[TCP].flags & SYN), sample)) for sample in obs_window]
+        num_syn_packets = num_tcp_pkts(syn_obs_window)
+
         # mean and standard deviation TCP packet length
         mu_size, std_size = packet_length(obs_window)
         
@@ -89,7 +94,8 @@ for host in all_hosts:
         # feature vector
         x = np.array([
             obs_id,
-            num_tcp_packets, 
+            num_tcp_packets,
+            num_syn_packets,
             mu_size, 
             std_size, 
             ip_ent, 
@@ -109,7 +115,7 @@ for host in all_hosts:
     df = pd.DataFrame(
         data=data[:,1:],
         index=data[:,0],
-        columns=["pkt_num", "mu_len", "std_len", "ip_ent", "port_ent", "silence_ratio", "mu_silence", "std_silence"], 
+        columns=["pkt_num", "syn_num", "mu_len", "std_len", "ip_ent", "port_ent", "silence_ratio", "mu_silence", "std_silence"], 
     )
 
     print(df.describe())

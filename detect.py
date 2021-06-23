@@ -31,8 +31,10 @@ def predict(data_file, host, N=4):
 pcap_file = 'tpr-proj/project-files/captures/demo.pcap'
 os.system('python extract_features.py {} > /dev/null'.format(pcap_file))
 
+# get datasets for each host
 files = [f for f in os.listdir('.') if re.match(r"dataset_[0-9]+.[0-9].[0-9].[0-9].*\.csv", f)]
 
+# classify each host
 for f in files:
     host = re.findall(r'[0-9]+.[0-9]+.[0-9]+.[0-9]+',f)[0]
     print('host:\t{}'.format(host))

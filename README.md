@@ -55,5 +55,5 @@ for each observation window:
 - normalized shannon entropy of TCP destination IP
 - normalized shannon entropy of TCP destination port
 - ratio of silence to observation window
-- average of silence
+- mean of silence
 - std of silence

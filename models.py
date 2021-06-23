@@ -82,6 +82,8 @@ if __name__ == '__main__':
     normal_data = pd.read_csv('{}/normal_dataset.csv'.format(data_dir))
     # add classes, split and normalize
     X_train, X_test, y_train, y_test, scaler = prep_data(attack_data=attack_data, normal_data=normal_data)
+    # save scaler
+    pickle.dump(scaler, open('{}/scaler.pkl'.format(models_dir), 'wb'))
 
     #
     # train SVM with rbf kernel
@@ -96,7 +98,7 @@ if __name__ == '__main__':
     accuracy, precision, recall, f1, confusion_matrix = performanceEvaluation(y_test, y_pred)
     save_conf_matrix_img('{}/svm_confusion_matrix'.format(plots_dir), confusion_matrix)
     
-    res = '\nSVM results\n\n accuracy {:.2f}%\n precision {:.2f}%\n recall {:.2f}%\n f1 {:.2f}%\n'.format(accuracy, precision, recall, f1)
+    res = 'SVM results\n\n accuracy {:.2f}%\n precision {:.2f}%\n recall {:.2f}%\n f1 {:.2f}%\n'.format(accuracy, precision, recall, f1)
     res += '\n{}'.format(classification_report(y_test, y_pred))
 
     #
@@ -114,7 +116,7 @@ if __name__ == '__main__':
 
     res += '\nLogistic Regression results\n\n accuracy {:.2f}%\n precision {:.2f}%\n recall {:.2f}%\n f1 {:.2f}%\n'.format(accuracy, precision, recall, f1)
     res += '\n{}'.format(classification_report(y_test, y_pred))
-    print(res)
+    print('\n'+res)
 
     # save results
     with open('results.txt','w') as f:

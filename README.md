@@ -54,6 +54,6 @@ for each observation window:
 - std TCP packet length
 - normalized shannon entropy of TCP destination IP
 - normalized shannon entropy of TCP destination port
-- total silence
+- ratio of silence to observation window
 - average of silence
 - std of silence

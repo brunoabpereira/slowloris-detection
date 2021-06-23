@@ -1,0 +1,5 @@
+#!/bin/bash
+ip tuntap add dev tap0 mode tap
+ip link set up dev tap0
+ip addr add 10.0.0.67/26 dev tap0
+ip route add 10.0.0.0/8 via 10.0.0.65

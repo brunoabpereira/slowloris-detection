@@ -2,6 +2,7 @@ from utils import *
 from scapy.all import *
 import numpy as np
 import pandas as pd
+import sys
 
 ###
 ### filter packets by: 
@@ -11,7 +12,7 @@ import pandas as pd
 ###
 
 # file with raw packets
-pcapfile = 'dataset/raw/normal_capture.pcap'
+pcapfile = 'dataset/raw/normal_capture.pcap' if len(sys.argv) == 1 else sys.argv[1]
 # filter packets egressing from network
 network = '10.0.0.64/26'
 

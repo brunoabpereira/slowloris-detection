@@ -1,16 +1,13 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import pickle
 from sklearn import svm
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import MaxAbsScaler
 from sklearn import metrics
 from sklearn.metrics import classification_report
-from sklearn.model_selection import train_test_split,   \
-                                    learning_curve,     \
-                                    validation_curve,   \
-                                    cross_val_score,    \
-                                    RandomizedSearchCV
+from sklearn.model_selection import train_test_split
 
 def normalize(X, ignore_columns=['ip_ent', 'port_ent', 'silence_ratio'], scaler=None):
     # ignore already normalized features and get remaining features
@@ -63,9 +60,6 @@ def performanceEvaluation(y, pred_val):
     confusion_matrix = metrics.confusion_matrix(y, pred_val)
     return accuracy, precision, recall, f1, confusion_matrix
 
-def plots():
-    pass
-
 def save_conf_matrix_img(fname, confusion_matrix):
     tn, fp, fn, tp = confusion_matrix.ravel()
     cell_text = [[str(tp) + ' (tp)', str(fn) + ' (fn)'], [str(fp) + ' (fp)', str(tn) + ' (tn)']]
@@ -81,6 +75,7 @@ def save_conf_matrix_img(fname, confusion_matrix):
 if __name__ == '__main__':
     plots_dir = 'imgs'
     data_dir = 'dataset'
+    models_dir = 'models'
 
     # load data
     attack_data = pd.read_csv('{}/attack_dataset.csv'.format(data_dir))
@@ -93,27 +88,34 @@ if __name__ == '__main__':
     #
 
     svc = svm.SVC(kernel='rbf').fit(X_train, y_train)
+    # save model
+    pickle.dump(svc, open('{}/svm.pkl'.format(models_dir), 'wb'))
 
     # evaluate
     y_pred = svc.predict(X_test)
     accuracy, precision, recall, f1, confusion_matrix = performanceEvaluation(y_test, y_pred)
     save_conf_matrix_img('{}/svm_confusion_matrix'.format(plots_dir), confusion_matrix)
     
-    print('SVM results\n')
-    print(' accuracy {:.2f}%\n precision {:.2f}%\n recall {:.2f}%\n f1 {:.2f}%\n'.format(accuracy, precision, recall, f1))
-    print(classification_report(y_test, y_pred))
+    res = '\nSVM results\n\n accuracy {:.2f}%\n precision {:.2f}%\n recall {:.2f}%\n f1 {:.2f}%\n'.format(accuracy, precision, recall, f1)
+    res += '\n{}'.format(classification_report(y_test, y_pred))
 
     #
     # train logistic regression
     #
 
     logreg = LogisticRegression().fit(X_train, y_train)
+    # save model
+    pickle.dump(logreg, open('{}/logreg.pkl'.format(models_dir), 'wb'))
 
     # evaluate
     y_pred = logreg.predict(X_test)
     accuracy, precision, recall, f1, confusion_matrix = performanceEvaluation(y_test, y_pred)
     save_conf_matrix_img('{}/logreg_confusion_matrix'.format(plots_dir), confusion_matrix)
 
-    print('Logistic Regression results\n')
-    print(' accuracy {:.2f}%\n precision {:.2f}%\n recall {:.2f}%\n f1 {:.2f}%\n'.format(accuracy, precision, recall, f1))
-    print(classification_report(y_test, y_pred))
+    res += '\nLogistic Regression results\n\n accuracy {:.2f}%\n precision {:.2f}%\n recall {:.2f}%\n f1 {:.2f}%\n'.format(accuracy, precision, recall, f1)
+    res += '\n{}'.format(classification_report(y_test, y_pred))
+    print(res)
+
+    # save results
+    with open('results.txt','w') as f:
+        f.write(res)

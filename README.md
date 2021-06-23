@@ -50,8 +50,10 @@ for each source ip (host):
 
 for each observation window:
 - Number of TCP packets
-- Number of TCP packet *segments*
 - Mean TCP packet length
 - Variance TCP packet length
 - shannon entropy of TCP destination IP
 - shannon entropy of TCP destination port
+- total silence
+- average of silence
+- std of silence

@@ -2,8 +2,13 @@ from scapy.all import *
 import numpy as np
 import pandas as pd
 
-def samples(packets, sample_interval=1):
-    " arrange packets in 1 seconds intervals "
+def pkt_samples(packets, sample_interval=1, flag=None):
+    """ arrange packets in 1 seconds intervals
+        Args:
+            packets:
+            sample_interval:
+            flag: SYN = 2
+    """
     start_time = np.floor(packets[0].time)
     end_time = np.ceil(packets[-1].time)
     
@@ -14,7 +19,11 @@ def samples(packets, sample_interval=1):
     for interval_start in np.arange(start_time, end_time, sample_interval):
         sample = []
         while packet_idx < num_packets and packets[packet_idx].time < int(interval_start + sample_interval):
-            sample.append(packets[packet_idx])
+            pkt = packets[packet_idx]
+            if flag and pkt[TCP].flags.value == flag:
+                sample.append(pkt)
+            else:
+                sample.append(pkt)
             packet_idx +=1
         packet_samples.append(sample)
             

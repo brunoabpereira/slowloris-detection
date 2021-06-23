@@ -3,9 +3,9 @@ import time
 import random
 
 hosts_l = ['tmp.tpr.local','tmp2.tpr.local']
-sleeptime_l = [4,9,14]              # secs
-sockets_range = (150, 200)          # connections
-duration_range = (2, 6)             # mins
+sleeptime_l = [4,8,12]              # secs
+sockets_range = (150, 300)          # connections
+duration_range = (2, 7)             # mins
 # attack_interval_range = (30, 90)    # secs
 
 def run_attack(timeout, host, sockets, sleeptime):
@@ -20,7 +20,7 @@ def run_attack(timeout, host, sockets, sleeptime):
     os.system(command)
 
 
-max_duration = 15 * 60  # secs
+max_duration = 30 * 60  # secs
 total_duration = 0      # secs
 while total_duration < max_duration:
     start = time.time()

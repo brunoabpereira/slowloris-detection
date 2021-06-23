@@ -15,17 +15,16 @@ Packet captures for two scenarios: attack and normal.
 
 ## attack
 
-1 machine attacking 2 hosts for 15 mins. The attack performed is [slowloris](https://github.com/gkbrk/slowloris):
+1 machine attacking 2 hosts for 30 mins. The attack performed is [slowloris](https://github.com/gkbrk/slowloris):
 
 ```
-python3 slowloris.py host -ua -s x --sleeptime y
+slowloris host -ua -s x --sleeptime y
 ```
 
 - host = random host (tmp.tpr.local or tmp2.tpr.local)
 - sockets = random x in 150-250
 - sleeptime = random y in [4,9,14], must be less than Apache's KeepAliveTimeout (15 seconds in this case)
-- attack duration = 3-6 mins random interval
-- random intervals between attacks = 30-90 seconds
+- attack duration = 2-7 mins random interval
 
 ## normal
 1 machine browsing for 15 mins:
@@ -46,12 +45,12 @@ filter by:
 - source ip
 
 for each source ip (host):
-- get observation windows (sequential or sliding?)
+- get observation windows (sequential or sliding)
 
 for each observation window:
-- Number of TCP packets
-- Mean TCP packet length
-- Variance TCP packet length
+- number of TCP packets (all or SYN?)
+- mean TCP packet length
+- std TCP packet length
 - shannon entropy of TCP destination IP
 - shannon entropy of TCP destination port
 - total silence

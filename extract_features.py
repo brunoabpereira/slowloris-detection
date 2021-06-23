@@ -51,8 +51,8 @@ slide = 5
 obs_windows = dict.fromkeys(all_hosts, 0)
 
 for host in all_hosts:
-    smps = samples(packets[host], sample_interval=1)
-    obs_windows[host] = slidingObsWindow(smps, T, slide)
+    samples = pkt_samples(packets[host], sample_interval=1)
+    obs_windows[host] = slidingObsWindow(samples, T, slide)
 
 ###
 ### extract features for observation windows

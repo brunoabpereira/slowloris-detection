@@ -463,6 +463,38 @@
                     }
                 ],
                 "suspend": false
+            },
+            {
+                "filters": {},
+                "link_id": "58960149-fb8d-4c9b-bb9c-fa0d1d71e42e",
+                "link_style": {},
+                "nodes": [
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "rotation": 0,
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "text": "tap0",
+                            "x": 64,
+                            "y": -1
+                        },
+                        "node_id": "f77ca69c-5908-45ff-960b-ca8ff3fa21d4",
+                        "port_number": 1
+                    },
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "rotation": 0,
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "text": "e2",
+                            "x": 50,
+                            "y": 52
+                        },
+                        "node_id": "cb167dab-4b9c-492f-b715-436aff278577",
+                        "port_number": 2
+                    }
+                ],
+                "suspend": false
             }
         ],
         "nodes": [
@@ -777,8 +809,8 @@
                 "symbol": ":/symbols/vpcs_guest.svg",
                 "template_id": "19021f99-e36f-394d-b4a1-8aaa902ab9cc",
                 "width": 65,
-                "x": -480,
-                "y": 274,
+                "x": -505,
+                "y": 283,
                 "z": 1
             },
             {
@@ -806,8 +838,8 @@
                 "symbol": ":/symbols/vpcs_guest.svg",
                 "template_id": "19021f99-e36f-394d-b4a1-8aaa902ab9cc",
                 "width": 65,
-                "x": -340,
-                "y": 277,
+                "x": -329,
+                "y": 280,
                 "z": 1
             },
             {
@@ -835,8 +867,8 @@
                 "symbol": ":/symbols/vpcs_guest.svg",
                 "template_id": "19021f99-e36f-394d-b4a1-8aaa902ab9cc",
                 "width": 65,
-                "x": -119,
-                "y": 278,
+                "x": -107,
+                "y": 280,
                 "z": 1
             },
             {
@@ -1107,8 +1139,8 @@
                 "symbol": ":/symbols/vpcs_guest.svg",
                 "template_id": "19021f99-e36f-394d-b4a1-8aaa902ab9cc",
                 "width": 65,
-                "x": 90,
-                "y": 197,
+                "x": 105,
+                "y": 279,
                 "z": 1
             },
             {
@@ -1211,6 +1243,11 @@
                             "name": "lo",
                             "special": true,
                             "type": "ethernet"
+                        },
+                        {
+                            "name": "tap0",
+                            "special": false,
+                            "type": "tap"
                         },
                         {
                             "name": "virbr0",

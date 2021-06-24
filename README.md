@@ -4,6 +4,33 @@
 
 pip install -r requirements.txt
 
+# instructions
+
+Generate sequence of attacks with random configs
+```
+python gen_attack.py
+```
+
+Extract features from .pcap
+```
+python extract_features.py file.pcap
+```
+
+Train models using .csv in datasets/
+```
+python models.py
+```
+
+Detect attack hosts and identify time windows where attack occured from .pcap
+```
+python detect.py file.pcap
+```
+
+Plot graphs in imgs/
+```
+python plots.py
+```
+
 # Apache 2.4.38 (debian)
 ## default config (/etc/apache2/apache2.conf): 
 ```

@@ -1,5 +1,6 @@
 import os
 import re
+import sys
 import pickle
 import pandas as pd
 from models import *
@@ -28,7 +29,7 @@ def predict(data_file, host, N=4):
     return detected_obs_ids
 
 # parse pcap
-pcap_file = 'tpr-proj/project-files/captures/demo.pcap'
+pcap_file = 'tpr-proj/project-files/captures/demo.pcap' if len(sys.argv) == 1 else sys.argv[1]
 os.system('python extract_features.py {} > /dev/null'.format(pcap_file))
 
 # get datasets for each host

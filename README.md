@@ -1,5 +1,9 @@
 # slowloris-detection
 
+# install (python3.8)
+
+pip install -r requirements.txt
+
 # Apache 2.4.38 (debian)
 ## default config (/etc/apache2/apache2.conf): 
 ```
@@ -15,7 +19,7 @@ Packet captures for two scenarios: attack and normal.
 
 ## attack
 
-1 machine attacking 2 hosts for 30 mins. The attack performed is [slowloris](https://github.com/gkbrk/slowloris):
+1 machine attacking 2 hosts for 15 mins. The attack performed is [slowloris](https://github.com/gkbrk/slowloris):
 
 ```
 slowloris host -ua -s x --sleeptime y
@@ -45,9 +49,10 @@ filter by:
 - source ip
 
 for each source ip (host):
-- get observation windows (sequential or sliding)
+- sample packets with intervals of 1 second
+- get sliding observation windows
 
-for each observation window:
+for each observation window compute metrics:
 - number of TCP packets
 - number of TCP SYN packets
 - mean TCP packet length
